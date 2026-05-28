@@ -1,0 +1,32 @@
+{
+  "ignore_list": [
+    {"pattern": "^git(\\s|$)", "match_type": "regex", "description": "Keep git commands"},
+    {"pattern": "^kubectl(\\s|$)", "match_type": "regex", "description": "Keep kubectl commands"},
+    {"pattern": "^docker(\\s|$)", "match_type": "regex", "description": "Keep docker commands"},
+    {"pattern": "^ssh(\\s|$)", "match_type": "regex", "description": "Keep ssh commands"},
+    {"pattern": "^python(\\d*)(\\s|$)", "match_type": "regex", "description": "Keep python commands"},
+    {"pattern": "^make(\\s|$)", "match_type": "regex", "description": "Keep make commands"},
+    {"pattern": "^sudo(\\s|$)", "match_type": "regex", "description": "Keep sudo commands"},
+    {"pattern": "^ls(\\s|$)", "match_type": "regex", "description": "Keep ls commands"},
+    {"pattern": "^cd(\\s|$)", "match_type": "regex", "description": "Keep cd commands"},
+    {"pattern": "^cat(\\s|$)", "match_type": "regex", "description": "Keep cat commands"},
+    {"pattern": "^mkdir(\\s|$)", "match_type": "regex", "description": "Keep mkdir commands"},
+    {"pattern": "^cp(\\s|$)", "match_type": "regex", "description": "Keep cp commands"},
+    {"pattern": "^mv(\\s|$)", "match_type": "regex", "description": "Keep mv commands"},
+    {"pattern": "^rm(\\s|$)", "match_type": "regex", "description": "Keep rm commands"},
+    {"pattern": "^echo(\\s|$)", "match_type": "regex", "description": "Keep echo commands"}
+  ],
+  "allow_list": [
+    {"pattern": "^clear$", "match_type": "regex", "description": "Remove standalone clear"},
+    {"pattern": "^exit$", "match_type": "regex", "description": "Remove standalone exit"},
+    {"pattern": "^pwd$", "match_type": "regex", "description": "Remove standalone pwd"},
+    {"pattern": "^history$", "match_type": "regex", "description": "Remove standalone history"},
+    {"pattern": "curl.*Authorization.*Token", "match_type": "regex", "description": "Remove curl with auth tokens"},
+    {"pattern": "curl.*CSRFToken", "match_type": "regex", "description": "Remove curl with CSRF tokens"}
+  ],
+  "defaults": {
+    "max_length": 500,
+    "backup_retention": 10,
+    "max_burst": 2
+  }
+}
